@@ -1,7 +1,7 @@
 -- staging
 vim.keymap.set('n', '<leader>gs', ":Git status<cr>", {noremap = true})
-vim.keymap.set('n', '<leader>ga', ":Git add<cr>", {noremap = true})
-vim.keymap.set('n', '<leader>gc', ":Git commit<cr>", {noremap = true})
+vim.keymap.set('n', '<leader>ga', ":Git add ", {noremap = true})
+vim.keymap.set('n', '<leader>gc', ":Git commit -m ", {noremap = true})
 
 -- synching
 vim.keymap.set('n', '<leader>gp', ":Git push<cr>", {noremap = true})
