@@ -11,8 +11,6 @@ cmp.setup({
 
 	mapping = cmp.mapping.preset.insert({
 		['<C-Space>'] = cmp_action.toggle_completion(),
-		-- ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 'c'}),
-		-- ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 'c'}),
 		['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
 		['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<CR>'] = cmp.mapping.confirm({select = true}),
@@ -20,6 +18,9 @@ cmp.setup({
 		['C-]'] = cmp_action.luasnip_jump_forward(),
 		['C-u'] = cmp.mapping.scroll_docs(-4),
 		['C-d'] = cmp.mapping.scroll_docs(4),
+		['C-h'] = vim.lsp.buf.hover(),
+		['C-r'] = vim.lsp.buf.rename(),
+		['C-]'] = vim.lsp.buf.definition(),
 	}),
 
 	snippet = {
