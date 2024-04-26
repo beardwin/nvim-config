@@ -18,9 +18,6 @@ cmp.setup({
 		['C-]'] = cmp_action.luasnip_jump_forward(),
 		['C-u'] = cmp.mapping.scroll_docs(-4),
 		['C-d'] = cmp.mapping.scroll_docs(4),
-		['C-h'] = vim.lsp.buf.hover(),
-		['C-r'] = vim.lsp.buf.rename(),
-		['C-]'] = vim.lsp.buf.definition(),
 	}),
 
 	snippet = {
