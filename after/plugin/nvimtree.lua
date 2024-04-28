@@ -19,6 +19,9 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
+	trash = {
+		cmd = "trash"
+	},
 })
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {noremap=true})
