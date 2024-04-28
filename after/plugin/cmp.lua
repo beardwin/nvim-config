@@ -14,8 +14,6 @@ cmp.setup({
 		['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
 		['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<CR>'] = cmp.mapping.confirm({select = true}),
-		['C-['] = cmp_action.luasnip_jump_backward(),
-		['C-]'] = cmp_action.luasnip_jump_forward(),
 		['C-u'] = cmp.mapping.scroll_docs(-4),
 		['C-d'] = cmp.mapping.scroll_docs(4),
 	}),
