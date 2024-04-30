@@ -16,4 +16,5 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fsh', builtin.search_history, {})
 vim.keymap.set('n', '<leader>fcs', builtin.colorscheme, {})
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-
+vim.keymap.set('n', '<leader>f%', builtin.lsp_workspace_symbols, {})
+vim.keymap.set('n', '<leader>fd%', builtin.lsp_document_symbols, {})

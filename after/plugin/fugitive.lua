@@ -2,7 +2,7 @@
 vim.keymap.set('n', '<leader>gs', ":Git status<cr>", {noremap = true})
 vim.keymap.set('n', '<leader>ga', ":Git add ", {noremap = true})
 vim.keymap.set('n', '<leader>gc', ":Git commit -m ", {noremap = true})
-vim.keymap.set('n', '<leader>gd', ":Git diff<cr>", {noremap = true})
+vim.keymap.set('n', '<leader>gf', ":Git diff<cr>", {noremap = true})
 
 -- synching
 vim.keymap.set('n', '<leader>gp', ":Git push<cr>", {noremap = true})
