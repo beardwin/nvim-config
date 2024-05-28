@@ -1,4 +1,5 @@
 -- staging
+vim.keymap.set('n', '<leader>gd', ":G difftool<cr>", {noremap = true})
 vim.keymap.set('n', '<leader>gs', ":Git status<cr>", {noremap = true})
 vim.keymap.set('n', '<leader>ga', ":Git add ", {noremap = true})
 vim.keymap.set('n', '<leader>gc', ":Git commit -m ", {noremap = true})
