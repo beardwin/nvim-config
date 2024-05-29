@@ -28,6 +28,16 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<C-R>",  function() vim.lsp.buf.rename() end,         {
 		desc = '[R]ename symbol (with LSP)', buffer = bufnr, remap = false
 	})
+
+  vim.keymap.set("n", '<C-,>', function () vim.lsp.buf.code_action() end, {
+    desc = "Selects a code actions available at the current cursor position.", 
+    buffer = bufnr, remap = false 
+  })
+
+  vim.keymap.set("i", '<C-,>', function () vim.lsp.buf.code_action() end, {
+    desc = "Selects a code actions available at the current cursor position.", 
+    buffer = bufnr, remap = false 
+  })
 end)
 
 require('mason').setup({})
