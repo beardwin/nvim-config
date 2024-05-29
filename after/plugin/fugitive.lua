@@ -10,7 +10,7 @@ vim.keymap.set('n', '<leader>gf', ":Git diff<cr>", {noremap = true})
 -- synching
 vim.keymap.set('n', '<leader>gp', ":Git push<cr>", {noremap = true})
 vim.keymap.set('n', '<leader>gpf', ':Git push --force-with-lease<cr>', {noremap = true})
-vim.keymap.set('n', '<leader>gl', ":Git pull<cr>", {noremap = true})
+vim.keymap.set('n', '<leader>gl', ":Git pull --rebase<cr>", {noremap = true})
 vim.keymap.set('n', '<leader>gf', ":Git fetch<cr>", {noremap = true})
 
 -- git rebase
