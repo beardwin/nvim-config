@@ -1,6 +1,17 @@
 local builtin = require('telescope.builtin')
 
 require('telescope').setup({
+  defaults = {
+    mappings = {
+      n = {
+        ['<c-d>'] = require('telescope.actions').delete_buffer
+      },
+      i = {
+        ['<c-h>'] = "which_key",
+        ['<c-d>'] = require('telescope.actions').delete_buffer
+      }
+    }
+  }, 
 	pickers = {
 		find_files = {
 			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
