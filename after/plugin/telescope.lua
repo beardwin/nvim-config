@@ -10,12 +10,13 @@ require('telescope').setup({
         ['<c-h>'] = "which_key",
         ['<c-d>'] = require('telescope.actions').delete_buffer
       }
-    }
+    },
+    path_display = {"truncate"},
   }, 
 	pickers = {
 		find_files = {
-			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
-		}
+			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+		},
 	}
 })
 
@@ -25,7 +26,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fsh', builtin.search_history, {})
-vim.keymap.set('n', '<leader>fcs', builtin.colorscheme, {})
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>fcs', builtin.colorscheme, {})chore/store-recently-viewed-tests
+vim.keymap.set('n', '<leader>fr', function() builtin.lsp_references({show_line = false }) end, {})
 vim.keymap.set('n', '<leader>f%', builtin.lsp_workspace_symbols, {})
 vim.keymap.set('n', '<leader>fd%', builtin.lsp_document_symbols, {})
