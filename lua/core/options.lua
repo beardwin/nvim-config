@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.wo.relativenumber = true
 vim.wo.wrap = false
+vim.wo.number = true
  
 -- Create an autocmd for the TextYankPost event
 vim.api.nvim_create_autocmd('TextYankPost', {
