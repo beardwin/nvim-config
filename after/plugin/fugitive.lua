@@ -1,5 +1,6 @@
 -- branching
 vim.keymap.set('n', '<leader>go', ":G checkout ", {noremap = true})
+vim.keymap.set('n', '<leader>gbl', ":G branch -l<cr>", {noremap = true})
 
 -- staging
 vim.keymap.set('n', '<leader>gd', ":G difftool<cr>", {noremap = true})

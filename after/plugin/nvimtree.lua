@@ -4,6 +4,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
+local api = require "nvim-tree.api"
 
 -- OR setup with some options
 require("nvim-tree").setup({
