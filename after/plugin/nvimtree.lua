@@ -18,9 +18,7 @@ require("nvim-tree").setup({
   renderer = {
     group_empty = true,
   },
-  filters = {
-    dotfiles = true,
-  },
+    filters = { dotfiles = false, custom = { '^.git$', '^.vscode$' }},
 	trash = {
 		cmd = "trash"
 	},
