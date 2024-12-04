@@ -33,11 +33,6 @@ lsp.on_attach(function(client, bufnr)
     desc = "Selects a code actions available at the current cursor position.", 
     buffer = bufnr, remap = false 
   })
-
-  vim.keymap.set("i", '<C-,>', function () vim.lsp.buf.code_action() end, {
-    desc = "Selects a code actions available at the current cursor position.", 
-    buffer = bufnr, remap = false 
-  })
 end)
 
 require('mason').setup({})
@@ -49,6 +44,7 @@ require('mason-lspconfig').setup({
   		-- 'solargraph',
   		'eslint',
   		'lua_ls',
+      'gopls',
 	},
 	
 	handlers = {
