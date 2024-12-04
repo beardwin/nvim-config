@@ -40,7 +40,7 @@ require('mason-lspconfig').setup({
 	ensure_installed = {
   		'html',
   		'cssls',
-  		'tsserver',
+  		'ts_ls',
   		-- 'solargraph',
   		'eslint',
   		'lua_ls',
