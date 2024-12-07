@@ -45,6 +45,11 @@ vim.keymap.set("n", "<leader>gR", function()
   neogit.open({"rebase"})
 end)
 
+-- merge
+vim.keymap.set("n", "<leader>gM", function()
+  neogit.open({"merge"})
+end)
+
 -- status
 vim.keymap.set("n", "<leader>gs", function()
   neogit.open({kind = "split_below_all"})
