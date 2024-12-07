@@ -1,3 +1,4 @@
+-- for the crazy notifications and cmdline popupmenu
 local noice = require("noice")
 
 noice.setup({
@@ -50,5 +51,3 @@ end)
 vim.keymap.set("n", "<leader>nt", function()
   noice.cmd("telescope")
 end)
-
-
