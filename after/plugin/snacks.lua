@@ -42,3 +42,14 @@ vim.keymap.set("n", "<leader>T", function()
 end,
 {desc = "Toggle a terminal"})
 
+-- Words
+vim.keymap.set("n", "<leader>Wc", function()
+  snacks.words.clear()
+end,
+{desc = "Clear Words"})
+
+vim.keymap.set("n", "<leader>W?", function()
+  snacks.words.is_enabled(buf)
+end,
+{desc = "is words enabled?"})
+
