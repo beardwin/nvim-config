@@ -9,6 +9,7 @@ return {
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
     dashboard = { enabled = true },
+    git = {enabled = true},
     gitbrowse = { enabled = true },
     quickfile = { enabled = true },
     notify = {enabled = true},

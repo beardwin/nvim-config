@@ -14,6 +14,12 @@ vim.keymap.set("n", "<leader>boD", function()
 end,
 {desc = 'Delete all buffers without changing the layout'})
 
+-- Mappings for Git
+vim.keymap.set("n", "<leader>g?", function()
+  snacks.git.blame_line()
+end,
+{desc = 'Git blame the current line'})
+
 -- Mappings for Gitbrowse
 vim.keymap.set("n", "<leader>gB", function()
   snacks.gitbrowse()
