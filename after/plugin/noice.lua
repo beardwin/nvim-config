@@ -22,32 +22,32 @@ noice.setup({
 
 vim.keymap.set("n", "<leader>nl", function()
   noice.cmd("last")
-end)
+end, {desc = "Show last notification"})
 
 vim.keymap.set("n", "<leader>nh", function()
   noice.cmd("history")
-end)
+end, {desc = "Show notification history"})
 
 vim.keymap.set("n", "<leader>nd", function()
   noice.cmd("dismiss")
-end)
+end, {desc = "Dismiss all notifications"})
 
 vim.keymap.set("n", "<leader>ne", function()
   noice.cmd("errors")
-end)
+end, {desc = "Show last errors"})
 
 vim.keymap.set("n", "<leader>n!", function()
   noice.cmd("disable")
-end)
+end, {desc = "Disable notifications"})
 
 vim.keymap.set("n", "<leader>n*", function()
   noice.cmd("enable")
-end)
+end, {desc = "Enable notifications"})
 
 vim.keymap.set("n", "<leader>ns", function()
   noice.cmd("stats")
-end)
+end, {desc = "Show notification stats"})
 
 vim.keymap.set("n", "<leader>nt", function()
   noice.cmd("telescope")
-end)
+end, {desc = "Show notifications in Telescope"})

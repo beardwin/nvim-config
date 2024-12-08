@@ -24,7 +24,7 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {noremap=true})
-vim.keymap.set('n', '<leader>trf', ':NvimTreeFocus<cr>', {noremap=true})
-vim.keymap.set('n', '<leader>trc', ':NvimTreeCollapse<cr>', {noremap=true})
-vim.keymap.set('n', '<leader>fit', ':NvimTreeFindFile<cr>', {noremap=true})
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {noremap=true, desc="Toggle file tree"})
+vim.keymap.set('n', '<leader>trf', ':NvimTreeFocus<cr>', {noremap=true, desc="Focus file tree"})
+vim.keymap.set('n', '<leader>trc', ':NvimTreeCollapse<cr>', {noremap=true, desc="Collapse file tree"})
+vim.keymap.set('n', '<leader>fit', ':NvimTreeFindFile<cr>', {noremap=true, desc="Find in file tree"})
