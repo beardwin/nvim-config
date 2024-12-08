@@ -50,6 +50,11 @@ vim.keymap.set("n", "<leader>gM", function()
   neogit.open({"merge"})
 end)
 
+-- stash
+vim.keymap.set("n", "<leader>gS", function()
+  neogit.open({"stash"})
+end)
+
 -- status
 vim.keymap.set("n", "<leader>gs", function()
   neogit.open({kind = "split_below_all"})

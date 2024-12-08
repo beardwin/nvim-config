@@ -42,9 +42,3 @@ vim.keymap.set("n", "<leader>T", function()
 end,
 {desc = "Toggle a terminal"})
 
--- toggle 
-vim.keymap.set("n", "<leader>t", function()
-  snacks.toggle()
-end,
-{desc = "Toggle which-key...?"})
-
