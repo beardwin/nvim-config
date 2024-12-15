@@ -43,7 +43,7 @@ end,
 {desc = "Select a scratch pad"})
 
 -- Terminal
-vim.keymap.set("n", "<leader>T", function()
+vim.keymap.set("n", "<C-/>", function()
   snacks.terminal.toggle()
 end,
 {desc = "Toggle a terminal"})
