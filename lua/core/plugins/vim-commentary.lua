@@ -1,3 +1,3 @@
 -- bulk commenting
 -- https://github.com/tpope/vim-commentary
-return {'tpope/vim-commentary'}
+return { "tpope/vim-commentary" }
