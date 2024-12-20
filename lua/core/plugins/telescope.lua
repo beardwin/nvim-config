@@ -60,6 +60,10 @@ return {
           require("telescope.themes").get_dropdown(),
         },
       },
+
+      defaults = {
+        path_display = { truncate = 3, shorten = 3 },
+      },
     })
 
     -- Enable Telescope extensions if they are installed
