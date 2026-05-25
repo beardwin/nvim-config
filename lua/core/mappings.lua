@@ -33,4 +33,14 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "<leader>wo", ":%bd|e#|bd#<cr>", { desc = "Delete all other buffers" })
 
-vim.keymap.set({ "n", "i", "v" }, "<C-o>", "<cmd>Oil --float <CR>", { desc = "Launch [O]il in the current directory" })
+-- Buffer navigation
+vim.keymap.set("n", "<leader>b", "<cmd>bprevious<CR>", { desc = "Go to previous [B]uffer" })
+vim.keymap.set("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Go to [N]ext buffer" })
+
+-- quicklist navigation
+vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>", { desc = "Go to [n]ext item in quicklist" })
+vim.keymap.set("n", "<leader>cp", "<cmd>cprev<CR>", { desc = "Go to [p]revious item in quicklist" })
+vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>", { desc = "[c]lose the quicklist" })
+vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>", { desc = "[o]open the quicklist" })
+
+vim.keymap.set("n", "<leader>o", "<cmd>Oil --float <CR>", { desc = "Launch [O]il in the current directory" })
