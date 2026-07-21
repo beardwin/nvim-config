@@ -182,6 +182,14 @@ return {
       --
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       ts_ls = {},
+      elixirls = {
+        cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+        settings = {
+          elixirLS = {
+            stdlibSrcDir = vim.fn.trim(vim.fn.system("elixir -e 'IO.puts Path.expand(\"../../..\", :code.lib_dir(:elixir))'")),
+          },
+        },
+      },
       --
 
       lua_ls = {
@@ -220,7 +228,6 @@ return {
       "stylua", -- Used to format Lua code
       "prettier",
       "sql-formatter",
-      "lexical",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

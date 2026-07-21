@@ -33,6 +33,7 @@ return { -- Autoformat
 
 		formatters_by_ft = {
 			lua = { "stylua" },
+			elixir = { "mix" },
 			go = { "goimports", "gofumpt" },
 			sql = { "sqlfmt" },
 			javascript = { "eslint_d" },
