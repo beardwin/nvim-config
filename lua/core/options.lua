@@ -11,7 +11,41 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "98"
+
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION or vim.env.HERDR_ENV then
+	local function osc52_copy(lines, _)
+		local text = table.concat(lines, "\n")
+		local encoded = vim.base64.encode(text)
+		local sequence = "\027]52;c;" .. encoded .. "\007"
+		local stderr = vim.uv.new_tty(2, false)
+
+		if stderr then
+			stderr:write(sequence)
+			stderr:close()
+		else
+			io.stderr:write(sequence)
+			io.stderr:flush()
+		end
+	end
+
+	local function osc52_paste()
+		return { vim.fn.split(vim.fn.getreg('"'), "\n"), vim.fn.getregtype('"') }
+	end
+
+	vim.g.clipboard = {
+		name = "OSC 52",
+		copy = {
+			["+"] = osc52_copy,
+			["*"] = osc52_copy,
+		},
+		paste = {
+			["+"] = osc52_paste,
+			["*"] = osc52_paste,
+		},
+	}
+end
+
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
 vim.opt.softtabstop = 2
