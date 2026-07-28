@@ -182,14 +182,8 @@ return {
       --
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       ts_ls = {},
-      elixirls = {
-        cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
-        settings = {
-          elixirLS = {
-            stdlibSrcDir = vim.fn.trim(vim.fn.system("elixir -e 'IO.puts Path.expand(\"../../..\", :code.lib_dir(:elixir))'")),
-          },
-        },
-      },
+      -- Elixir is configured below with the newer vim.lsp.config API because
+      -- Expert is only available there in current nvim-lspconfig.
       --
 
       lua_ls = {
@@ -228,10 +222,30 @@ return {
       "stylua", -- Used to format Lua code
       "prettier",
       "sql-formatter",
+      "expert",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
+    vim.lsp.config("expert", {
+      cmd = { vim.fn.stdpath("data") .. "/mason/bin/expert", "--stdio" },
+      filetypes = { "elixir", "eelixir", "heex", "surface" },
+      root_dir = function(bufnr, on_dir)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        local matches = vim.fs.find({ "mix.exs" }, { upward = true, limit = 2, path = fname })
+        local child_or_root_path, maybe_umbrella_path = unpack(matches)
+        local root_dir = vim.fs.dirname(maybe_umbrella_path or child_or_root_path)
+          or vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
+
+        on_dir(root_dir)
+      end,
+      capabilities = capabilities,
+    })
+    vim.lsp.enable("expert")
+
     require("mason-lspconfig").setup({
+      automatic_enable = {
+        exclude = { "elixirls", "expert" },
+      },
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
