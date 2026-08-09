@@ -6,18 +6,32 @@ return {
 	lazy = false,
 	build = ':TSUpdate',
 	config = function()
-		require('nvim-treesitter.configs').setup({
-			ensure_installed = treesitter.languages,
-			auto_install = true,
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-				disable = function(_, bufnr)
-					return not treesitter.should_enable_indent(vim.bo[bufnr].filetype)
-				end,
-			},
+		local nvim_treesitter = require('nvim-treesitter')
+		local group = vim.api.nvim_create_augroup('core-treesitter', { clear = true })
+
+		nvim_treesitter.setup({
+			install_dir = vim.fn.stdpath('data') .. '/site',
+		})
+
+		nvim_treesitter.install(treesitter.languages)
+
+		vim.api.nvim_create_autocmd('FileType', {
+			group = group,
+			callback = function(event)
+				local filetype = vim.bo[event.buf].filetype
+				local language = vim.treesitter.language.get_lang(filetype)
+
+				if not language then
+					return
+				end
+
+				local ok = pcall(vim.treesitter.start, event.buf, language)
+				if not ok or not treesitter.should_enable_indent(filetype) then
+					return
+				end
+
+				vim.bo[event.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end,
 		})
 	end,
 }

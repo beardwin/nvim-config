@@ -30,7 +30,7 @@ return {
           -- The Mix task to use to run the tests
           -- Can be a function to return a dynamic value.
           -- Default: "test"
-          mix_task = { "test" },
+          mix_task = "test",
           -- Other formatters to pass to the test command as the formatters are overridden
           -- Can be a function to return a dynamic value.
           -- Default: {"ExUnit.CLIFormatter"}
@@ -153,6 +153,10 @@ return {
     vim.keymap.set("n", "<leader>xo", function()
       neot.output.open()
     end, { desc = "[X]Unit: Toggle the [O]utput panel" })
+
+    vim.keymap.set("n", "<leader>xO", function()
+      neot.output_panel.toggle()
+    end, { desc = "[X]Unit: Toggle full [O]utput panel" })
   end,
 
   -- keys = {
